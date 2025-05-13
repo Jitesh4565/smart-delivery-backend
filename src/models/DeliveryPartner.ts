@@ -1,4 +1,4 @@
-import mongoose, {Document ,Schema,model } from "mongoose";
+import mongoose, {Document ,Schema, model } from "mongoose";
 
 
 export interface IDeliveryPartner extends Document{

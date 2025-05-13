@@ -43,7 +43,7 @@ export const runAutoAssignment=async(req:Request,res:Response):Promise<Response>
         // If Partner found assign Order
 
         if(selectedPartner){  
-            order.assignedTo = selectedPartner._id;
+            order.assignedTo = selectedPartner._id as string;
             order.status="assigned";
             await order.save();
 

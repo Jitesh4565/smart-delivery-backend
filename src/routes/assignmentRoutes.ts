@@ -3,7 +3,20 @@ import { getAssignmentMetrics, runAutoAssignment } from "../controllers/assignme
 
 const router=express.Router();
 
-router.post("/run",runAutoAssignment);
-router.get("/metrics",getAssignmentMetrics);
+router.post("/run",async(req,res,next)=>{
+    try{
+       await runAutoAssignment(req,res);
+    }catch(error){
+        next(error);
+    }
+});
+router.get("/metrics",async(req,res,next)=>{
+    try{
+        await getAssignmentMetrics(req,res);
+
+    }catch(error){
+        next(error);
+    }
+});
 
 export default router;
